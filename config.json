@@ -1,0 +1,30 @@
+{
+  "currency": "USD",
+  "employees": [
+    {"name": "Alice",   "role": "Nurse",  "hourly_rate": 35},
+    {"name": "Bob",     "role": "Nurse",  "hourly_rate": 35},
+    {"name": "Eve",     "role": "Nurse",  "hourly_rate": 30},
+    {"name": "Charlie", "role": "Doctor", "hourly_rate": 90},
+    {"name": "Diana",   "role": "Doctor", "hourly_rate": 90},
+    {"name": "Frank",   "role": "Doctor", "hourly_rate": 85}
+  ],
+  "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+  "shifts": [
+    {"name": "Morning", "hours": 8},
+    {"name": "Evening", "hours": 8}
+  ],
+  "min_staff_default": 1,
+  "min_staff": [
+    {"day": "Mon", "shift": "Morning", "role": "Doctor", "min": 2}
+  ],
+  "time_off": [
+    {"employee": "Alice", "day": "Mon", "shift": "Morning"},
+    {"employee": "Diana", "day": "Wed", "shift": "Evening"}
+  ],
+  "max_shifts_per_employee": 4,
+  "rules": [
+    {"type": "forbidden_sequence", "first": "Evening", "then": "Morning"},
+    {"type": "max_consecutive_days", "max": 3}
+  ],
+  "objectives": ["cost", "balance"]
+}
